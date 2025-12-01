@@ -1,0 +1,208 @@
+.about-hero {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+.page-title {
+  font-size: var(--text-5xl);
+  color: var(--white);
+  margin-bottom: var(--space-md);
+}
+
+.page-subtitle {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mission & Vision */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--space-xl);
+}
+
+.mission-card {
+  background: var(--white);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+.card-icon {
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  color: var(--white);
+}
+
+.mission-card h2 {
+  color: var(--primary-dark);
+  margin-bottom: var(--space-md);
+}
+
+.mission-card p {
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* Values */
+.value-card {
+  background: var(--white);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.value-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  color: var(--white);
+}
+
+.value-icon svg {
+  width: 35px;
+  height: 35px;
+}
+
+.value-card h3 {
+  color: var(--primary-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.value-card p {
+  color: var(--gray);
+  font-size: var(--text-sm);
+}
+
+/* History */
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.history-text p {
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.history-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.image-placeholder svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Facilities */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+.facility-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.facility-item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.facility-item svg {
+  color: var(--accent-green);
+  flex-shrink: 0;
+}
+
+.facility-item span {
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+/* Accreditations */
+.accreditations {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.accreditation-badge {
+  text-align: center;
+  padding: var(--space-lg);
+}
+
+.accreditation-badge svg {
+  color: #ffa500;
+  margin-bottom: var(--space-sm);
+}
+
+.accreditation-badge p {
+  color: var(--dark-gray);
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .mission-vision-grid,
+  .history-content {
+    grid-template-columns: 1fr;
+  }
+
+  .history-image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: var(--text-4xl);
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+}

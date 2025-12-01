@@ -1,0 +1,138 @@
+.contact-hero {
+  background: var(--gradient-primary);
+  color: var(--white);
+  padding: var(--space-3xl) 0;
+  text-align: center;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+}
+
+.contact-info h2,
+.contact-form-wrapper h2 {
+  color: var(--primary-dark);
+  margin-bottom: var(--space-md);
+}
+
+.contact-intro,
+.form-intro {
+  color: var(--gray);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+/* Contact Details */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-item {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-text h4 {
+  color: var(--primary-dark);
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-lg);
+}
+
+.contact-text p {
+  color: var(--gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Map Placeholder */
+.map-placeholder {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-lg);
+}
+
+.map-placeholder svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Department Cards */
+.department-card {
+  background: var(--white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.department-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.department-card h4 {
+  color: var(--primary-dark);
+  margin-bottom: var(--space-xs);
+  font-size: var(--text-xl);
+}
+
+.department-card p {
+  color: var(--gray);
+  margin-bottom: var(--space-md);
+}
+
+.department-phone {
+  display: inline-block;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.department-phone:hover {
+  color: var(--primary-teal);
+}
+
+@media (max-width: 968px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-icon {
+    margin: 0 auto;
+  }
+}
