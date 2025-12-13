@@ -37,7 +37,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h4>Address</h4>
-                    <p>123 Medical Center Drive<br />City, State 12345<br />United States</p>
+                    <p>A 7,8, Meena Wala -Sirsi Rd, Janakpuri II, Panchyawala<br />Jaipur, Rajasthan 302034</p>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h4>Phone</h4>
-                    <p>Main: +1 (555) 123-4567<br />Emergency: 911<br />Appointments: +1 (555) 123-4568</p>
+                    <p>Main: <a href="tel:9610005141" style={{color: 'inherit'}}>96100 05141</a><br />Emergency: <a href="tel:9610005141" style={{color: 'inherit'}}>96100 05141</a></p>
                   </div>
                 </div>
 
@@ -62,7 +62,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h4>Email</h4>
-                    <p>info@medicarehospital.com<br />appointments@medicarehospital.com<br />emergency@medicarehospital.com</p>
+                    <p><a href="mailto:Pushpendrachouhan900@gmail.com" style={{color: 'inherit'}}>Pushpendrachouhan900@gmail.com</a></p>
                   </div>
                 </div>
 
@@ -82,20 +82,15 @@ const Contact = () => {
 
               {/* Map Placeholder */}
               <div className="map-placeholder">
-                <svg viewBox="0 0 400 250" fill="none">
-                  <rect width="400" height="250" fill="#e9ecef" />
-                  <circle cx="200" cy="125" r="30" fill="url(#mapGradient)" />
-                  <path d="M200 95v30M170 125h60" stroke="white" strokeWidth="4" strokeLinecap="round" />
-                  <text x="200" y="180" textAnchor="middle" fill="#6c757d" fontSize="14">
-                    Map Location
-                  </text>
-                  <defs>
-                    <linearGradient id="mapGradient" x1="0" y1="0" x2="60" y2="60">
-                      <stop offset="0%" stopColor="#0066cc" />
-                      <stop offset="100%" stopColor="#00a8a8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <iframe 
+                  src="https://maps.google.com/maps?q=26.9246065,75.7155826&hl=en&z=14&output=embed"
+                  width="100%" 
+                  height="250" 
+                  style={{border:0, borderRadius: '8px'}} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade">
+                </iframe>
               </div>
             </div>
 
@@ -124,7 +119,7 @@ const Contact = () => {
             <div className="department-card">
               <h4>Emergency Department</h4>
               <p>24/7 Emergency Services</p>
-              <a href="tel:911" className="department-phone">911</a>
+              <a href="tel:108" className="department-phone">108</a>
             </div>
             <div className="department-card">
               <h4>Appointments</h4>

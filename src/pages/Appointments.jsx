@@ -345,7 +345,7 @@ const Appointments = () => {
             </svg>
             <div>
               <h3>For Medical Emergencies</h3>
-              <p>If you are experiencing a medical emergency, please call 911 or visit our emergency department immediately.</p>
+              <p>If you are experiencing a medical emergency, please call 108 or visit our emergency department immediately.</p>
             </div>
           </div>
         </div>

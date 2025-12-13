@@ -61,7 +61,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">
-          <h1 className="page-title animate-fadeIn">About MediCare Hospital</h1>
+          <h1 className="page-title animate-fadeIn">About Chauhan Hospital</h1>
           <p className="page-subtitle animate-slideInLeft">
             Dedicated to Excellence in Healthcare Since 1999
           </p>
@@ -132,7 +132,7 @@ const About = () => {
             <div className="history-text">
               <h2 className="section-title">Our History</h2>
               <p>
-                Founded in 1999, MediCare Hospital has been serving the community for over 
+                Founded in 1999, Chauhan Hospital has been serving the community for over 
                 25 years. What started as a small clinic has grown into a comprehensive 
                 healthcare facility with state-of-the-art equipment and a team of highly 
                 skilled medical professionals.
@@ -144,7 +144,7 @@ const About = () => {
                 to ensure our patients receive the best possible care.
               </p>
               <p>
-                Today, MediCare Hospital is proud to be a trusted healthcare partner for 
+                Today, Chauhan Hospital is proud to be a trusted healthcare partner for 
                 thousands of families, offering a full range of medical services from 
                 emergency care to specialized treatments.
               </p>

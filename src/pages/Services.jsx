@@ -155,7 +155,7 @@ const Services = () => {
       <section className="section" style={{ background: 'var(--off-white)' }}>
         <div className="container">
           <div className="section-header text-center">
-            <h2 className="section-title">Why Choose MediCare?</h2>
+            <h2 className="section-title">Why Choose Chauhan Hospital?</h2>
             <p className="section-description">
               Excellence in healthcare delivery
             </p>

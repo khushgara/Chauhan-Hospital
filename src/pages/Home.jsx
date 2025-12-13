@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import DoctorCard from '../components/DoctorCard';
-import TestimonialCard from '../components/TestimonialCard';
+import ReviewsSection from '../components/ReviewsSection';
 import StatsSection from '../components/StatsSection';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -62,26 +62,7 @@ const Home = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: 'John Smith',
-      rating: 5,
-      testimonial: 'Excellent care and professional staff. The doctors took time to explain everything and made me feel comfortable throughout my treatment.',
-      date: 'November 2024',
-    },
-    {
-      name: 'Maria Garcia',
-      rating: 5,
-      testimonial: 'Outstanding hospital with state-of-the-art facilities. I received the best treatment possible and the staff was incredibly caring.',
-      date: 'October 2024',
-    },
-    {
-      name: 'David Brown',
-      rating: 5,
-      testimonial: 'Highly recommend MediCare Hospital. From emergency care to follow-up appointments, everything was handled professionally.',
-      date: 'September 2024',
-    },
-  ];
+
 
   return (
     <div className="home-page">
@@ -133,22 +114,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header text-center">
-            <h2 className="section-title">Patient Testimonials</h2>
-            <p className="section-description">
-              Hear what our patients have to say about their experience
-            </p>
-          </div>
-          <div className="grid grid-3">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Reviews Section */}
+      <ReviewsSection />
 
       {/* Emergency Banner */}
       <section className="emergency-banner">
@@ -164,8 +131,8 @@ const Home = () => {
               <h3>24/7 Emergency Services</h3>
               <p>Our emergency department is always ready to provide immediate care</p>
             </div>
-            <a href="tel:911" className="btn btn-secondary btn-large">
-              Call Emergency: 911
+            <a href="tel:108" className="btn btn-secondary btn-large">
+              Call Emergency: 108
             </a>
           </div>
         </div>

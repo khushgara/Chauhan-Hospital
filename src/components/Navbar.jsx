@@ -31,7 +31,7 @@ const Navbar = () => {
                 </defs>
               </svg>
             </div>
-            <span className="logo-text">MediCare Hospital</span>
+            <span className="logo-text">Chauhan Hospital</span>
           </Link>
 
           {/* Desktop Navigation */}
