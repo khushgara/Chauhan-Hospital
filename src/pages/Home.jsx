@@ -7,7 +7,7 @@ import StatsSection from '../components/StatsSection';
 import BlogSection from '../components/BlogSection';
 import { Link } from 'react-router-dom';
 import './Home.css';
-
+ 
 const Home = () => {
   const services = [
     {
