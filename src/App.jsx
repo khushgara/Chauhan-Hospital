@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Doctors from './pages/Doctors';
 import Contact from './pages/Contact';
 import Appointments from './pages/Appointments';
+import Blog from './pages/Blog';
 import './index.css';
 
 // Scroll to top component
@@ -35,6 +36,7 @@ function App() {
             <Route path="/doctors" element={<Doctors />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/appointments" element={<Appointments />} />
+            <Route path="/blog" element={<Blog />} />
           </Routes>
         </main>
         <Footer />

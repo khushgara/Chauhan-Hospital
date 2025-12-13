@@ -4,6 +4,7 @@ import ServiceCard from '../components/ServiceCard';
 import DoctorCard from '../components/DoctorCard';
 import ReviewsSection from '../components/ReviewsSection';
 import StatsSection from '../components/StatsSection';
+import BlogSection from '../components/BlogSection';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -116,6 +117,9 @@ const Home = () => {
 
       {/* Reviews Section */}
       <ReviewsSection />
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* Emergency Banner */}
       <section className="emergency-banner">

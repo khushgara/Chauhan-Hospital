@@ -40,6 +40,7 @@ const Navbar = () => {
             <li><Link to="/about" className="nav-link">About</Link></li>
             <li><Link to="/services" className="nav-link">Services</Link></li>
             <li><Link to="/doctors" className="nav-link">Doctors</Link></li>
+            <li><Link to="/blog" className="nav-link">Blog</Link></li>
             <li><Link to="/contact" className="nav-link">Contact</Link></li>
           </ul>
 
@@ -69,6 +70,7 @@ const Navbar = () => {
             <li><Link to="/about" className="mobile-nav-link" onClick={closeMenu}>About</Link></li>
             <li><Link to="/services" className="mobile-nav-link" onClick={closeMenu}>Services</Link></li>
             <li><Link to="/doctors" className="mobile-nav-link" onClick={closeMenu}>Doctors</Link></li>
+            <li><Link to="/blog" className="mobile-nav-link" onClick={closeMenu}>Blog</Link></li>
             <li><Link to="/contact" className="mobile-nav-link" onClick={closeMenu}>Contact</Link></li>
             <li>
               <Link to="/appointments" className="btn btn-primary" onClick={closeMenu}>
