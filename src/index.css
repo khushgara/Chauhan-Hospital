@@ -464,3 +464,7 @@ a:hover {
 .shadow { box-shadow: var(--shadow-md); }
 .shadow-lg { box-shadow: var(--shadow-lg); }
 .shadow-xl { box-shadow: var(--shadow-xl); }
+
+iframe#\:2\.container {
+    display: none;
+}

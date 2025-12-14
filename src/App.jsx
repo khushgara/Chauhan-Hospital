@@ -11,7 +11,8 @@ import Appointments from './pages/Appointments';
 import Blog from './pages/Blog';
 import './index.css';
 
-import WhatsAppButton from './components/WhatsAppButton';
+import SocialFloatingActions from './components/SocialFloatingActions';
+import GoogleTranslate from './components/GoogleTranslate';
 
 // Scroll to top component
 function ScrollToTop() {
@@ -42,7 +43,8 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <WhatsAppButton />
+        <SocialFloatingActions />
+        <GoogleTranslate />
       </div>
     </Router>
   );
