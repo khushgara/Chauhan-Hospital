@@ -27,7 +27,9 @@ const Appointments = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwSVtfsgWlk8dXJWmUpeyCA6_DnopjraQIlM437bSvSZwk2pGltDksNUHDlScTSuE5pdA/exec";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Basic validation
@@ -37,12 +39,39 @@ const Appointments = () => {
       return;
     }
 
-    // Simulate form submission
     setStatus('loading');
-    setTimeout(() => {
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({ ...formData, type: 'booking' }),
+        mode: "no-cors"
+      });
+
       setStatus('success');
+      // Reset form (optional, might want to keep some data or redirect)
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        dateOfBirth: '',
+        gender: '',
+        department: '',
+        doctor: '',
+        preferredDate: '',
+        preferredTime: '',
+        reason: '',
+        insurance: '',
+        insuranceId: '',
+      });
       setTimeout(() => setStatus(''), 5000);
-    }, 1500);
+
+    } catch (error) {
+       console.error("Error submitting form:", error);
+       setStatus('error');
+       setTimeout(() => setStatus(''), 3000);
+    }
   };
 
   return (
@@ -345,7 +374,7 @@ const Appointments = () => {
             </svg>
             <div>
               <h3>For Medical Emergencies</h3>
-              <p>If you are experiencing a medical emergency, please call 108 or visit our emergency department immediately.</p>
+              <p>If you are experiencing a medical emergency, please call 7850010759 or visit our emergency department immediately.</p>
             </div>
           </div>
         </div>

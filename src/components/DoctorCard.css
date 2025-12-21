@@ -82,3 +82,40 @@
 .doctor-btn {
   width: 100%;
 }
+
+.doctor-description {
+  color: var(--gray);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  /* Limit lines if needed, or remove for full text */
+}
+
+.doctor-expertise {
+  margin-bottom: var(--space-md);
+}
+
+.doctor-expertise h4 {
+  font-size: var(--text-md);
+  color: var(--primary-dark);
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.doctor-expertise ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doctor-expertise li {
+  background: var(--off-white);
+  color: var(--primary-blue);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid rgba(0,0,0,0.05);
+}

@@ -9,6 +9,7 @@ import Doctors from './pages/Doctors';
 import Contact from './pages/Contact';
 import Appointments from './pages/Appointments';
 import Blog from './pages/Blog';
+import Sitemap from './pages/Sitemap';
 import './index.css';
 
 import SocialFloatingActions from './components/SocialFloatingActions';
@@ -40,6 +41,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/appointments" element={<Appointments />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
         </main>
         <Footer />

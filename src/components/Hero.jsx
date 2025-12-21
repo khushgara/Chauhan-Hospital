@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
+import logo from '../assets/logo.png';
 
 const Hero = () => {
   return (
@@ -10,11 +11,10 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title animate-fadeIn">
-              Your Health, Our <span className="text-gradient">Priority</span>
+              Best Multispecialty Public Hospital in Jaipur
             </h1>
             <p className="hero-description animate-slideInLeft">
-              Experience world-class healthcare with compassionate care. Our team of expert 
-              doctors and state-of-the-art facilities ensure you receive the best treatment possible.
+              Looking for a specialist hospital near me? Chauhan Hospitals is the best hospital near you in Jaipur, offering expert specialists, emergency care & multispecialty services.
             </p>
             <div className="hero-buttons animate-slideInLeft">
               <Link to="/appointments" className="btn btn-primary btn-large">
@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
           <div className="hero-image animate-float">
             <div className="hero-image-card">
-              <svg viewBox="0 0 400 400" fill="none">
+              {/* <svg viewBox="0 0 400 400" fill="none">
                 <rect width="400" height="400" rx="20" fill="url(#heroGradient)"/>
                 <circle cx="200" cy="180" r="60" fill="white" opacity="0.2"/>
                 <path d="M200 140v80M160 180h80" stroke="white" strokeWidth="8" strokeLinecap="round"/>
@@ -62,7 +62,8 @@ const Hero = () => {
                     <stop offset="100%" stopColor="#00a8a8"/>
                   </linearGradient>
                 </defs>
-              </svg>
+              </svg> */}
+              <img src={logo} alt="" />
             </div>
           </div>
         </div>

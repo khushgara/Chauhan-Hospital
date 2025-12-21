@@ -1,7 +1,51 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import './About.css';
+import about1 from '../assets/about-1.jpg';
+import about2 from '../assets/about-2.jpg';
+import about3 from '../assets/about-3.jpg';
+import about4 from '../assets/about-4.jpg';
+
 
 const About = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const galleryImages = [
+    { src: about1, alt: "Hospital Building" },
+    { src: about2, alt: "Medical Facility" },
+    { src: about3, alt: "Patient Care" },
+    { src: about4, alt: "Medical Team" },
+  ];
+
+  const openLightbox = (index) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  // AND I need to replace the Gallery section to use the click handlers.
+  // AND I need to add the Lightbox modal at the end.
+  
+  // Since I can't do multiple replacements easily in one go if they are far apart without `multi_replace_file_content` which I SHOULD use here to be safe and clean.
+  
+  // I will Cancel this `replace_file_content` and use `multi_replace_file_content` instead.
+
+
+
   const values = [
     {
       icon: (
@@ -46,14 +90,15 @@ const About = () => {
   ];
 
   const facilities = [
-    'State-of-the-art Operating Rooms',
-    'Advanced Diagnostic Imaging',
-    'Modern ICU and CCU Units',
-    'Fully Equipped Emergency Department',
-    'Comfortable Patient Rooms',
-    'On-site Pharmacy',
-    'Clinical Laboratory',
-    'Rehabilitation Center',
+    'General Medicine',
+    'Orthopedics',
+    'General Surgery',
+    'Pediatrics',
+    'Obstetrics & Gynecology',
+    'Pharmacy',
+    'Laboratory Services',
+    'Dental & Cosmetic Care',
+    'Critical Care & Trauma Center',
   ];
 
   return (
@@ -63,7 +108,7 @@ const About = () => {
         <div className="container">
           <h1 className="page-title animate-fadeIn">About Chauhan Hospital</h1>
           <p className="page-subtitle animate-slideInLeft">
-            Dedicated to Excellence in Healthcare Since 1999
+            Dedicated to Excellence in Healthcare Since 2001
           </p>
         </div>
       </section>
@@ -132,36 +177,27 @@ const About = () => {
             <div className="history-text">
               <h2 className="section-title">Our History</h2>
               <p>
-                Founded in 1999, Chauhan Hospital has been serving the community for over 
-                25 years. What started as a small clinic has grown into a comprehensive 
-                healthcare facility with state-of-the-art equipment and a team of highly 
-                skilled medical professionals.
+                Established in 2001, Chauhan Hospital has been a pillar of healthcare in the community for over two decades. 
+                What began with a vision to provide accessible and quality medical care has grown into a premier healthcare institution. 
+                Our journey is marked by trust, dedication, and an unwavering commitment to patient well-being.
               </p>
               <p>
-                Throughout our journey, we have remained committed to our founding principles: 
-                providing accessible, high-quality healthcare to all members of our community. 
-                We have continuously invested in the latest medical technology and training 
-                to ensure our patients receive the best possible care.
+                From our humble beginnings, we have expanded our services to include specialized departments such as 
+                Medicine, Orthopedics, General Surgery, and Pediatrics. Our facility now boasts a modern Pharmacy, 
+                advanced Laboratory, and specialized units for Dental & Cosmetic care, as well as a fully equipped 
+                Critical Care and Trauma center.
               </p>
               <p>
-                Today, Chauhan Hospital is proud to be a trusted healthcare partner for 
-                thousands of families, offering a full range of medical services from 
-                emergency care to specialized treatments.
+                Today, Chauhan Hospital stands as a symbol of excellence, combining experienced medical professionals 
+                with compassionate care to serve thousands of families in Jaipur and surrounding areas.
               </p>
             </div>
-            <div className="history-image">
-              <div className="image-placeholder">
-                <svg viewBox="0 0 400 300" fill="none">
-                  <rect width="400" height="300" fill="url(#aboutGradient)" />
-                  <circle cx="200" cy="150" r="80" fill="white" opacity="0.2" />
-                  <path d="M200 110v80M160 150h80" stroke="white" strokeWidth="8" strokeLinecap="round" />
-                  <defs>
-                    <linearGradient id="aboutGradient" x1="0" y1="0" x2="400" y2="300">
-                      <stop offset="0%" stopColor="#0066cc" />
-                      <stop offset="100%" stopColor="#00a8a8" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+            <div className="history-images-grid">
+              <img src={about1} alt="Hospital Building" className="about-img main-img" />
+              <div className="sub-images">
+                <img src={about2} alt="Medical Facility" className="about-img" />
+                <img src={about3} alt="Hospital Services" className="about-img" />
+                <img src={about4} alt="Medical Team" className="about-img" />
               </div>
             </div>
           </div>
@@ -222,6 +258,44 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="section-header text-center">
+            <h2 className="section-title">Our Gallery</h2>
+            <p className="section-description">
+              A glimpse into our world-class facilities and compassionate care
+            </p>
+          </div>
+          <div className="gallery-grid">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="gallery-item" onClick={() => openLightbox(index)}>
+                <img src={image.src} alt={image.alt} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={closeLightbox}>&times;</button>
+            <button className="lightbox-nav prev" onClick={prevImage}>&#10094;</button>
+            <img 
+              src={galleryImages[currentImageIndex].src} 
+              alt={galleryImages[currentImageIndex].alt} 
+              className="lightbox-image"
+            />
+            <button className="lightbox-nav next" onClick={nextImage}>&#10095;</button>
+            <div className="lightbox-caption">
+              {galleryImages[currentImageIndex].alt} ({currentImageIndex + 1}/{galleryImages.length})
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

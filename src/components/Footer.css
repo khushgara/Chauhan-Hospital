@@ -49,9 +49,25 @@
 }
 
 .social-link:hover {
-  background: var(--primary-teal);
   transform: translateY(-3px);
   box-shadow: var(--shadow-glow);
+  color: var(--white);
+}
+
+.social-link.facebook:hover {
+  background: #1877F2;
+}
+
+.social-link.twitter:hover {
+  background: #000000;
+}
+
+.social-link.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-link.youtube:hover {
+  background: #FF0000;
 }
 
 /* Footer Links */
@@ -99,6 +115,7 @@
   border-left: 3px solid var(--accent-red);
   font-weight: 600;
   color: var(--white) !important;
+  width: max-content;
 }
 
 /* Bottom Bar */

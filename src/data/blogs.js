@@ -15,7 +15,7 @@ export const blogs = [
     date: 'Dec 08, 2025',
     author: 'Dr. Emily Williams',
     category: 'Orthopedics',
-    image: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
+    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 3,

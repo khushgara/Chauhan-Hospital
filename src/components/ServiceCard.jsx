@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './ServiceCard.css';
 
-const ServiceCard = ({ icon, title, description, link }) => {
+const ServiceCard = ({ icon, title, description, link, showReadMore = true }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
-    <div className="service-card">
+    <div className={`service-card ${isExpanded ? 'expanded' : ''}`}>
       <div className="service-icon">
         {icon}
       </div>
       <h3 className="service-title">{title}</h3>
-      <p className="service-description">{description}</p>
+  <p className={`service-description ${!isExpanded && showReadMore ? 'truncated' : ''}`}>
+        {description}
+      </p>
+      {showReadMore && (
+        <button 
+          className="read-more-btn"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+      )}
       {link && (
         <a href={link} className="service-link">
           Learn More

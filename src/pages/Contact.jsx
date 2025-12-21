@@ -119,17 +119,17 @@ const Contact = () => {
             <div className="department-card">
               <h4>Emergency Department</h4>
               <p>24/7 Emergency Services</p>
-              <a href="tel:108" className="department-phone">108</a>
+              <a href="tel:7850010759" className="department-phone">7850010759</a>
             </div>
             <div className="department-card">
               <h4>Appointments</h4>
               <p>Schedule your visit</p>
-              <a href="tel:+15551234568" className="department-phone">+1 (555) 123-4568</a>
+              <a href="tel:+15551234568" className="department-phone">96100 05141</a>
             </div>
             <div className="department-card">
               <h4>Patient Services</h4>
               <p>General inquiries</p>
-              <a href="tel:+15551234567" className="department-phone">+1 (555) 123-4567</a>
+              <a href="tel:+15551234567" className="department-phone">96100 05141</a>
             </div>
           </div>
         </div>

@@ -4,6 +4,25 @@ import './Services.css';
 
 const Services = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [showSeoContent, setShowSeoContent] = useState(false);
+
+  React.useEffect(() => {
+    // Update Title
+    document.title = "Multispecialty Hospital in Jaipur - General, Emergency, Cardiology & Cancer Care | Chauhan Hospitals";
+
+    // Update Meta Description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    const descriptionContent = "Looking for a specialist hospital near me? Chauhan Hospitals is the best hospital near you in Jaipur, offering expert specialists, emergency care & multispecialty services.";
+    
+    if (metaDescription) {
+      metaDescription.setAttribute('content', descriptionContent);
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = "description";
+      meta.content = descriptionContent;
+      document.head.appendChild(meta);
+    }
+  }, []);
 
   const services = [
     {
@@ -13,8 +32,8 @@ const Services = () => {
           <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
         </svg>
       ),
-      title: 'Cardiology',
-      description: 'Comprehensive heart care including diagnostics, interventional procedures, and cardiac rehabilitation.',
+      title: 'Cardiology Services',
+      description: 'Heart care is a must that only experts and with great precision can provide. Chauhan Hospitals is ranked among the best cardiology hospitals in Jaipur. We are the source of the First Aid, treatment, and rehabilitation of cardiac diseases. Our cardiology unit makes available diagnostic tools like ECG, echocardiography, cardiac risk assessments and offers a variety of treatments including hypertension, coronary artery disease, and other cardiovascular conditions.',
     },
     {
       category: 'neurology',
@@ -23,8 +42,8 @@ const Services = () => {
           <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
         </svg>
       ),
-      title: 'Neurology',
-      description: 'Expert care for brain, spine, and nervous system disorders with advanced diagnostic capabilities.',
+      title: 'Neurology & Neuroscience Care',
+      description: 'Our neurology department provides professional treatment for ailments of the brain, spine, and nervous system. In the event that a patient is looking for a nearby neurologist, he or she can get not only expert consultations but also diagnostic support at Chauhan Hospitals. Furthermore, we act as an all-inclusive neuroscience clinic, using a multidisciplinary approach to treating migraine, epilepsy, stroke recovery, and nerve disorders.',
     },
     {
       category: 'orthopedics',
@@ -33,8 +52,8 @@ const Services = () => {
           <path d="M5.5 8.5L9 12l-3.5 3.5L2 12l3.5-3.5zM12 2l3.5 3.5L12 9 8.5 5.5 12 2z" />
         </svg>
       ),
-      title: 'Orthopedics',
-      description: 'Advanced bone, joint, and musculoskeletal care with modern surgical techniques.',
+      title: 'Orthopedics & Bone Care',
+      description: 'As a reliable orthopedics hospital, Chauhan Hospitals provides treatment for bone, joint, and musculoskeletal conditions. Our orthopedic specialists manage fractures, arthritis, sports injuries, back pain, and joint disorders using both conservative and surgical methods. We emphasize mobility restoration, pain management, and rehabilitation to help patients regain strength and independence.',
     },
     {
       category: 'pediatrics',
@@ -44,8 +63,8 @@ const Services = () => {
           <circle cx="12" cy="7" r="4" />
         </svg>
       ),
-      title: 'Pediatrics',
-      description: 'Specialized healthcare for infants, children, and adolescents with compassionate care.',
+      title: 'Pediatrics Care',
+      description: 'Our pediatric department provides comprehensive care for infants, children, and adolescents. Whether it\'s routine vaccinations, growth monitoring, or treatment for acute and chronic illnesses, our specialists ensure your child receives the best medical attention in a comforting environment.',
     },
     {
       category: 'emergency',
@@ -55,8 +74,8 @@ const Services = () => {
           <path d="M12 8v4M12 16h.01" />
         </svg>
       ),
-      title: 'Emergency Care',
-      description: '24/7 emergency services with rapid response team and state-of-the-art trauma care.',
+      title: '24×7 Emergency Care',
+      description: 'Medical emergencies can strike out of the blue. Chauhan Hospitals acts, technologically, as a 24/7 hospital near me, giving emergency services around the clock, with trained doctors, nursing staff, and essential life-saving equipment. Our emergency department is up to the point with trauma cases, accidents, acute illnesses, and urgent medical situations, offering speed and efficiency.',
     },
     {
       category: 'radiology',
@@ -66,8 +85,8 @@ const Services = () => {
           <path d="M21 21l-4.35-4.35" />
         </svg>
       ),
-      title: 'Radiology',
-      description: 'Advanced imaging services including MRI, CT scan, X-ray, and ultrasound.',
+      title: 'Radiology & Diagnostic Services',
+      description: 'Accurate diagnosis is what treatment effectively rests upon. Among few radiology hospitals in Jaipur that can be trusted, Chauhan Hospitals is definitely one of them, providing a full range of cutting edge imaging and diagnostic services. Our radiology department is equipped with the latest technology to provide precise imaging for various specialties, thus, enabling the diagnosis to be very fast and the treatment to be more effective.',
     },
     {
       category: 'surgery',
@@ -77,7 +96,7 @@ const Services = () => {
         </svg>
       ),
       title: 'General Surgery',
-      description: 'Comprehensive surgical services with minimally invasive techniques and expert surgeons.',
+      description: 'Our general surgery department is equipped to offer surgical care to treat various kinds of diseases, using up-to-date methods and adhering to security measures. Our surgeons are tireless in their efforts to lessen the recovery period and bring about the best results in minor, as well as, complex operations. in addition, the pre-operative examination and post operative care are done accurately.',
     },
     {
       category: 'maternity',
@@ -86,8 +105,8 @@ const Services = () => {
           <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
         </svg>
       ),
-      title: 'Maternity & Obstetrics',
-      description: 'Complete maternal and newborn care with modern delivery suites and NICU facilities.',
+      title: 'Maternity & Obstetrics Care',
+      description: 'At Chauhan Hospitals, we provide one stop maternity and obstetric services for the women who come to us at any phase of their pregnancy. Our team is offering antenatal care, delivery services with an emphasis on the safety of mother and the baby, postnatal support, and gynecological consultations as well.',
     },
     {
       category: 'oncology',
@@ -97,8 +116,8 @@ const Services = () => {
           <circle cx="12" cy="12" r="4" />
         </svg>
       ),
-      title: 'Oncology',
-      description: 'Comprehensive cancer care with chemotherapy, radiation therapy, and supportive services.',
+      title: 'Oncology & Cancer Care',
+      description: 'Our oncology section provides humane and organized cancer care through early diagnosis, treatment planning, and persistent medical support. We are committed to patient education, symptom management, and coordinated care to accompany individuals and families all along the treatment process.',
     },
   ];
 
@@ -119,7 +138,7 @@ const Services = () => {
       {/* Hero Section */}
       <section className="services-hero">
         <div className="container">
-          <h1 className="page-title animate-fadeIn">Our Medical Services</h1>
+          <h1 className="page-title animate-fadeIn">Comprehensive Medical Services at Our Multispecialty Hospital in Jaipur</h1>
           <p className="page-subtitle animate-slideInLeft">
             Comprehensive healthcare solutions tailored to your needs
           </p>
@@ -192,6 +211,57 @@ const Services = () => {
               <h3>24/7 Availability</h3>
               <p>Round-the-clock emergency services and patient care support.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="section bg-light">
+        <div className="container">
+          <div className="seo-content">
+            <h2 className="section-title text-center mb-4">Our Medical Services at Chauhan Hospitals</h2>
+            <p className="mb-4">
+              Chauhan Hospitals is a multi-specialty healthcare provider that people can rely on in Jaipur. The hospital offers advanced and comprehensive medical services in a single location. Our hospital, which is equipped with experienced doctors, the latest technology, and a care approach that puts the patient first, is made to satisfy both normal and emergency healthcare needs. As one of the top private hospitals in the area, we are committed to precision, safety, and compassionate care.
+            </p>
+            <p className="mb-4">
+              Patients in need of a reliable medical centre near me can go to Chauhan Hospitals, which is a multi-disciplinary hospital offering a wide range of services from emergency care to advanced surgical and diagnostic services. If you require only preventive care or heavy medical treatment, our team will provide you with the consultation on time, doctor appointments scheduling will be easy and your healthcare experience will be flawless.
+            </p>
+
+            {!showSeoContent && (
+              <div className="text-center mt-3">
+                <button 
+                  onClick={() => setShowSeoContent(true)}
+                  className="btn btn-link text-primary font-weight-bold"
+                  style={{ textDecoration: 'none', fontSize: '1.1rem' }}
+                >
+                  Read More
+                </button>
+              </div>
+            )}
+
+            {showSeoContent && (
+              <>
+                <h2 className="section-title text-center mb-4 mt-5 animate-fadeIn">Patient-Centered Healthcare You Can Trust</h2>
+                <p className="mb-4 animate-fadeIn">
+                  Chauhan Hospitals is a trustworthy medical service provider and is honest with its patients. Booking a doctor appointment, getting specialist consultations, and receiving coordinated care are some of the services that patients can avail themselves of without facing any delays. For those looking for the best private hospitals or a trustworthy medical centre near me, Chauhan Hospitals is a great option for quality healthcare.
+                </p>
+                <p className="mb-4 animate-fadeIn">
+                  We are still Jaipur’s and the surrounding areas’ excellent and honest healthcare providers because we have modern infrastructure, skilled experts and a patient-oriented philosophy—making a positive difference in patient’s lives through our services.
+                </p>
+
+                <div className="text-center mt-4">
+                  <button 
+                    onClick={() => setShowSeoContent(false)}
+                    className="btn btn-link text-secondary"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    Read Less
+                  </button>
+                </div>
+              </>
+            )}
+
+
           </div>
         </div>
       </section>

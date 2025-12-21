@@ -210,6 +210,10 @@ a:hover {
   text-decoration: none;
 }
 
+.navbar-actions.desktop-actions a.btn.btn-primary {
+    background: #cb2b2b;
+}
+
 .btn-primary {
   background: var(--gradient-primary);
   color: var(--white);

@@ -16,11 +16,12 @@
 
 /* Logo */
 .navbar-logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  text-decoration: none;
-  transition: transform var(--transition-base);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    transition: transform var(--transition-base);
+    width: 22%;
 }
 
 .navbar-logo:hover {
@@ -30,6 +31,12 @@
 .logo-icon {
   display: flex;
   align-items: center;
+  width:20%;
+}
+.logo-icon img {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .logo-text {

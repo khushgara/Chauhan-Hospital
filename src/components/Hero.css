@@ -91,10 +91,15 @@
   align-items: center;
 }
 
+.hero-image-card img {
+    width: 70%;
+}
 .hero-image-card {
-  width: 100%;
-  max-width: 400px;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    width: 100%;
+    /* max-width: 400px; */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    display: flex;
+    justify-content: center;
 }
 
 .hero-image-card svg {

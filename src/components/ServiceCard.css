@@ -62,7 +62,34 @@
 .service-description {
   color: var(--gray);
   line-height: 1.6;
+  margin-bottom: var(--space-sm);
+  transition: all var(--transition-base);
+}
+
+.service-description.truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--primary-blue);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
   margin-bottom: var(--space-md);
+  font-size: var(--text-sm);
+  transition: color var(--transition-fast);
+  display: block;
+}
+
+.read-more-btn:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
 }
 
 .service-link {

@@ -19,7 +19,9 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwSVtfsgWlk8dXJWmUpeyCA6_DnopjraQIlM437bSvSZwk2pGltDksNUHDlScTSuE5pdA/exec";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Basic validation
@@ -29,9 +31,16 @@ const ContactForm = () => {
       return;
     }
 
-    // Simulate form submission
     setStatus('loading');
-    setTimeout(() => {
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({ ...formData, type: 'contact' }),
+        mode: "no-cors" // Handle CORS restriction from Google Apps Script
+      });
+
+      // Since mode is no-cors, we assume success if no error is thrown
       setStatus('success');
       setFormData({
         name: '',
@@ -41,7 +50,12 @@ const ContactForm = () => {
         message: '',
       });
       setTimeout(() => setStatus(''), 5000);
-    }, 1500);
+      
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus('error');
+      setTimeout(() => setStatus(''), 3000);
+    }
   };
 
   return (

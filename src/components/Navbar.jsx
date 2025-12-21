@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="navbar-logo" onClick={closeMenu}>
             <div className="logo-icon">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              {/* <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                 <rect width="40" height="40" rx="8" fill="url(#gradient)" />
                 <path d="M20 10v20M10 20h20" stroke="white" strokeWidth="3" strokeLinecap="round" />
                 <defs>
@@ -29,7 +30,8 @@ const Navbar = () => {
                     <stop offset="100%" stopColor="#00a8a8" />
                   </linearGradient>
                 </defs>
-              </svg>
+              </svg> */}
+              <img src={logo} alt="" />
             </div>
             <span className="logo-text">Chauhan Hospital</span>
           </Link>
