@@ -6,8 +6,9 @@ import './Doctors.css';
 import drMahendra from '../assets/dr-mahendra.jpg';
 import drPushpendra from '../assets/dr-pushpendra.jpg';
 import drRajkumar from '../assets/dr-rajkumar-v2.jpg';
-import drMadhu from '../assets/dr-madhu.jpg';
-import drShailendra from '../assets/dr-shailendra.jpg';
+import drVeer from '../assets/dr-veer.jpg';
+import drSurekha from '../assets/dr-surekha.jpg';
+import drMadhu from '../assets/dr-madhu-new.jpg';
 
 const Doctors = () => {
   const [selectedSpecialization, setSelectedSpecialization] = useState('all');
@@ -31,6 +32,50 @@ const Doctors = () => {
   }, []);
 
   const doctors = [
+    {
+      name: 'Dr. Veer Singh Chauhan',
+      specialization: 'Internal Medicine',
+      qualification: 'Senior Physician',
+      experience: '35+ Years',
+      image: drVeer,
+      description: 'Dr. Veer Singh Chauhan is a highly respected Senior Physician with over 35 years of clinical experience. He specializes in the diagnosis and treatment of complex medical conditions, offering expert care in general medicine and chronic disease management.',
+      expertise: [
+        'General Medicine',
+        'Chronic Disease Management',
+        'Infectious Diseases',
+        'Diabetes Management',
+        'Geriatric Care'
+      ]
+    },
+    {
+      name: 'Dr. Surekha Tanwar',
+      specialization: 'Oral & Cosmetic Surgeon',
+      qualification: 'BDS, MDS (Ex SMS & Army Hospital)',
+      experience: 'Experienced',
+      image: drSurekha,
+      description: 'Dr. Surekha Tanwar is a distinguished Oral and Cosmetic Surgeon with a rich background serving at prestigious institutions like SMS Hospital Jaipur, Bhagwan Mahavir Hospital, and Army Hospital. She specializes in advanced dental and facial cosmetic procedures.',
+      expertise: [
+        'Oral Surgery',
+        'Cosmetic Dentistry',
+        'Facial Trauma',
+        'Dental Implants',
+        'Jaw Correction'
+      ]
+    },
+    {
+      name: 'Dr. Madhu Chauhan',
+      specialization: 'Critical Care & Emergency',
+      qualification: 'MBBS, Critical Care',
+      experience: 'Experienced',
+      image: drMadhu,
+      description: 'Dr. Madhu Chauhan is a dedicated specialist in Critical Care and Emergency Medicine. She is committed to providing immediate, life-saving interventions and compassionate care for critically ill patients.',
+      expertise: [
+        'Critical Care',
+        'Emergency Medicine',
+        'Trauma Management',
+        'ICU Care'
+      ]
+    },
     {
       name: 'Dr. Mahendra Kumar Sharma',
       specialization: 'General Surgery',
@@ -79,41 +124,13 @@ const Doctors = () => {
         'Minimally Invasive Urology'
       ]
     },
-    {
-      name: 'Dr. Madhu Chauhan',
-      specialization: 'Critical Care & Emergency',
-      qualification: 'Critical Care & Emergency In-Charge',
-      experience: '10+',
-      image: drMadhu,
-      description: 'Dr. Madhu Chauhan leads the Critical Care and Emergency Department, providing 24×7 emergency management and intensive care services. She ensures rapid decision-making and patient safety.',
-      expertise: [
-        'Emergency Medicine',
-        'Critical Care Management',
-        'ICU & Ventilator Care',
-        'Trauma Stabilization',
-        'Acute Life-Saving Interventions'
-      ]
-    },
-    {
-      name: 'Dr. Shailendra Singh Chauhan',
-      specialization: 'Critical Care & Trauma',
-      qualification: 'IDDCM (Critical Care & Trauma)',
-      experience: '8+',
-      image: drShailendra,
-      description: 'Dr. Shailendra Singh Chauhan is a specialist in Critical Care and Trauma management, dedicated to providing immediate and effective care for life-threatening conditions.',
-      expertise: [
-        'Trauma Management',
-        'Advanced Critical Care',
-        'Emergency Resuscitation',
-        'Polytrauma Care'
-      ]
-    },
   ];
 
   const specializations = [
     'all',
     'General Surgery',
     'Internal Medicine',
+    'Oral & Cosmetic Surgeon',
     'Urology',
     'Critical Care & Emergency',
   ];

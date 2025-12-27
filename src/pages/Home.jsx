@@ -10,6 +10,8 @@ import './Home.css';
 import drMahendra from '../assets/dr-mahendra.jpg';
 import drPushpendra from '../assets/dr-pushpendra.jpg';
 import drRajkumar from '../assets/dr-rajkumar-v2.jpg';
+import drVeer from '../assets/dr-veer.jpg';
+import drSurekha from '../assets/dr-surekha.jpg';
  
 const Home = () => {
   const [showSeoContent, setShowSeoContent] = useState(false);
@@ -66,6 +68,20 @@ const Home = () => {
   ];
 
   const doctors = [
+    {
+      name: 'Dr. Veer Singh Chauhan',
+      specialization: 'Senior Physician',
+      qualification: 'Senior Physician',
+      experience: '35+ Years',
+      image: drVeer,
+    },
+    {
+      name: 'Dr. Surekha Tanwar',
+      specialization: 'Oral & Cosmetic Surgeon',
+      qualification: 'BDS, MDS',
+      experience: 'Experienced',
+      image: drSurekha,
+    },
     {
       name: 'Dr. Mahendra Kumar Sharma',
       specialization: 'General Surgery',
@@ -129,7 +145,7 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-3">
-            {doctors.map((doctor, index) => (
+            {doctors.slice(0, 3).map((doctor, index) => (
               <DoctorCard key={index} {...doctor} />
             ))}
           </div>
