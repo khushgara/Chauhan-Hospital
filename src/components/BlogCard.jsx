@@ -1,11 +1,11 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import './BlogCard.css';
 
-const BlogCard = ({ title, excerpt, date, author, category, image }) => {
+const BlogCard = ({ id, title, excerpt, date, author, category, image }) => {
   return (
     <article className="blog-card">
       <div className="blog-image">
-        <img src={image} alt={title} loading="lazy" />
+        <img src={image} alt={title} loading="lazy" referrerPolicy="no-referrer" />
         <span className="blog-category">{category}</span>
       </div>
       <div className="blog-content">
@@ -16,12 +16,12 @@ const BlogCard = ({ title, excerpt, date, author, category, image }) => {
         <h3 className="blog-title">{title}</h3>
         <p className="blog-excerpt">{excerpt}</p>
         <div className="blog-footer">
-          <a href="#" className="read-more" onClick={(e) => e.preventDefault()}>
+          <Link to={`/blog/${id}`} className="read-more">
             Read Article
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </article>
