@@ -97,15 +97,15 @@ const Doctors = () => {
       name: 'Dr. Pushpendra Singh Chauhan',
       specialization: 'Internal Medicine',
       qualification: 'MBBS, M.D (Medicine)',
-      experience: '10+',
+      experience: '5+',
       image: drPushpendra,
-      description: 'Dr. Pushpendra Singh Chauhan provides advanced, guideline-based medical treatment with a focus on accurate diagnosis, long-term disease control, and preventive healthcare. Known for ethical practice and comprehensive care.',
+      description: 'Dr. Pushpendra Singh Chauhan has 5 years of experience in ICU, Rheumatology, Diabetes, and Cardiac Disease. He provides advanced, guideline-based medical treatment with a focus on accurate diagnosis, long-term disease control, and preventive healthcare.',
       expertise: [
-        'Heart Disease Management',
-        'Diabetes & Hypertension',
-        'Thyroid Disorders',
-        'Obesity & Lifestyle Diseases',
-        'Gout & Rheumatoid Arthritis',
+        'ICU & Critical Care',
+        'Rheumatology',
+        'Diabetes Management',
+        'Cardiac Disease',
+        'Hypertension',
         'Infectious Diseases'
       ]
     },
@@ -183,6 +183,58 @@ const Doctors = () => {
               <p>No doctors found for the selected specialization.</p>
             </div>
           )}
+        </div>
+      </section>
+
+
+
+      {/* Medical Team Section */}
+      <section className="section bg-light">
+        <div className="container">
+          <h2 className="section-title text-center">Our Medical Team</h2>
+          <div className="grid grid-4 text-center">
+            {[
+              { name: 'Dr. S. S. Chauhan', qualification: 'I.D.C.M – Critical Care' },
+              { name: 'Dr. Naveen', qualification: 'MBBS, MS (Orthopedics, Orthoscopy)' },
+              { 
+                name: 'Dr. Charu Tomar', 
+                qualification: 'M.D (Pediatrics)',
+                details: 'Focus and 2D Echo for children, NICU and critical care of neonates, Allergic and Asthma management, Endocrine disorder in children Management, Malnourishment'
+              },
+              { name: 'Dr. Madhu Chauhan', qualification: 'MBBS' }
+            ].map((doc, index) => (
+              <div key={index} className="medical-team-card" style={{
+                background: 'white',
+                padding: '1.5rem',
+                borderRadius: '8px',
+                boxShadow: 'var(--shadow-md)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  background: 'var(--primary-color)',
+                  color: 'white',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 1rem',
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold'
+                }}>
+                  {doc.name.split(' ')[1][0]}
+                </div>
+                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-dark)' }}>{doc.name}</h3>
+                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', margin: 0 }}>{doc.qualification}</p>
+                {doc.details && (
+                  <p style={{ color: '#555', fontSize: '0.85rem', marginTop: '0.8rem', lineHeight: '1.4' }}>
+                    {doc.details}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
