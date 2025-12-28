@@ -214,7 +214,20 @@ const About = () => {
             </p>
           </div>
           <div className="facilities-grid">
-            {facilities.map((facility, index) => (
+            {[
+              '24×7 Emergency Services',
+              'Medical ICU, Neonatal ICU (NICU), Surgical ICU (SICU)',
+              'Pediatric ICU (PICU) and Surgical ICU',
+              'Digital X-Ray',
+              '4D Sonography',
+              'Dialysis',
+              'Endoscopy',
+              'Physiotherapy',
+              'Cosmetology and Hair Transplant',
+              'Dietician and Nutritionist',
+              '24×7 Pharmacy',
+              'Critical Care and Trauma'
+            ].map((facility, index) => (
               <div key={index} className="facility-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
@@ -223,6 +236,32 @@ const About = () => {
                 <span>{facility}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Government & Insurance Schemes */}
+      <section className="section">
+        <div className="container">
+          <div className="section-header text-center">
+            <h2 className="section-title">Government & Insurance Schemes</h2>
+            <p className="section-description">
+              We accept various government schemes to make healthcare accessible
+            </p>
+          </div>
+          <div className="grid grid-3 text-center">
+            <div className="card">
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Ayushman Bharat</h3>
+              <p>Health Scheme Accepted</p>
+            </div>
+            <div className="card">
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>RGHS</h3>
+              <p>Rajasthan Government Health Scheme</p>
+            </div>
+            <div className="card">
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>TPA Approved</h3>
+              <p>All TPA Approved Hospital</p>
+            </div>
           </div>
         </div>
       </section>

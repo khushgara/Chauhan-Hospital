@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import drMahendra from '../assets/dr-mahendra.jpg';
 import drPushpendra from '../assets/dr-pushpendra.jpg';
-import drRajkumar from '../assets/dr-rajkumar-v2.jpg';
+
 import drVeer from '../assets/dr-veer.jpg';
 import drSurekha from '../assets/dr-surekha.jpg';
  
@@ -96,13 +96,7 @@ const Home = () => {
       experience: '10+',
       image: drPushpendra,
     },
-    {
-      name: 'Dr. Rajkumar',
-      specialization: 'Urology',
-      qualification: 'Consultant Urologist',
-      experience: '12+',
-      image: drRajkumar,
-    },
+
   ];
 
 

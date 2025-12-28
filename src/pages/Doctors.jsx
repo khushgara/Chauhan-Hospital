@@ -5,7 +5,9 @@ import './Doctors.css';
 
 import drMahendra from '../assets/dr-mahendra.jpg';
 import drPushpendra from '../assets/dr-pushpendra.jpg';
-import drRajkumar from '../assets/dr-rajkumar-v2.jpg';
+import drShailendra from '../assets/dr-shailendra.jpg';
+import drCharu from '../assets/dr-charu.jpg';
+
 import drVeer from '../assets/dr-veer.jpg';
 import drSurekha from '../assets/dr-surekha.jpg';
 import drMadhu from '../assets/dr-madhu-new.jpg';
@@ -110,20 +112,36 @@ const Doctors = () => {
       ]
     },
     {
-      name: 'Dr. Rajkumar',
-      specialization: 'Urology',
-      qualification: 'Consultant Urologist',
-      experience: '12+',
-      image: drRajkumar,
-      description: 'Dr. Rajkumar is a skilled Urology specialist providing advanced diagnosis and treatment for kidney, bladder, prostate, and urinary tract disorders. He focuses on safe, effective, and patient-centric care.',
+      name: 'Dr. Charu Singh',
+      specialization: 'Pediatrics / Child Specialist',
+      qualification: 'MBBS, MD (Pediatrics)',
+      experience: 'Experienced',
+      image: drCharu,
+      description: 'Dr. Charu Singh is a compassionate Pediatrician dedicated to the health and well-being of children. She specializes in newborn care, child development, and the management of pediatric illnesses.',
       expertise: [
-        'Kidney Stone Treatment',
-        'Prostate Disorders (BPH)',
-        'Urinary Tract Infections (UTI)',
-        'Bladder & Urinary Problems',
-        'Minimally Invasive Urology'
+        'Newborn Care',
+        'Child Nutrition',
+        'Vaccination',
+        'Pediatric Infections',
+        'Growth & Development'
       ]
     },
+    {
+      name: 'Dr. Shailendra Singh Chauhan',
+      specialization: 'Critical Care & Emergency',
+      qualification: 'IDDCM (Critical Care & Trauma)',
+      experience: 'Experienced',
+      image: drShailendra,
+      description: 'Dr. Shailendra Singh Chauhan is a dedicated specialist in Critical Care and Trauma management. He provides advanced life-saving interventions and expert care for critically ill patients.',
+      expertise: [
+        'Critical Care',
+        'Trauma Management',
+        'ICU Management',
+        'Emergency Procedures',
+        'Ventilator Support'
+      ]
+    },
+
   ];
 
   const specializations = [
@@ -188,15 +206,15 @@ const Doctors = () => {
 
 
 
-      {/* Medical Team Section */}
+
       <section className="section bg-light">
         <div className="container">
           <h2 className="section-title text-center">Our Medical Team</h2>
           <div className="grid grid-4 text-center">
             {[
-              { name: 'Dr. S. S. Chauhan', qualification: 'I.D.C.M – Critical Care' },
+              { name: 'Dr. Rajkumar', qualification: 'Consultant Urologist' },
               { name: 'Dr. Naveen', qualification: 'MBBS, MS (Orthopedics, Orthoscopy)' },
-              { name: 'Dr. Charu Tomar', qualification: 'M.D (Pediatrics)' },
+
               { name: 'Dr. Madhu Chauhan', qualification: 'MBBS' }
             ].map((doc, index) => (
               <div key={index} className="medical-team-card" style={{
@@ -220,24 +238,40 @@ const Doctors = () => {
                 e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
               }}
               >
-                <div style={{
-                  width: '70px',
-                  height: '70px',
-                  background: '#0066cc',
-                  color: 'white',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 1.5rem',
-                  fontSize: '1.8rem',
-                  fontWeight: 'bold',
-                  boxShadow: '0 4px 10px rgba(0,102,204,0.2)'
-                }}>
-                  {doc.name.split(' ')[1][0]}
-                </div>
+                {doc.image ? (
+                   <img 
+                    src={doc.image} 
+                    alt={doc.name} 
+                    style={{
+                      width: '100px',
+                      height: '100px',
+                      borderRadius: '50%',
+                      objectFit: 'cover',
+                      margin: '0 auto 1.5rem',
+                      boxShadow: '0 4px 10px rgba(0,102,204,0.2)',
+                      border: '3px solid white'
+                    }}
+                  />
+                ) : (
+                  <div style={{
+                    width: '70px',
+                    height: '70px',
+                    background: '#0066cc',
+                    color: 'white',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.5rem',
+                    fontSize: '1.8rem',
+                    fontWeight: 'bold',
+                    boxShadow: '0 4px 10px rgba(0,102,204,0.2)'
+                  }}>
+                    {doc.name.split(' ')[1][0]}
+                  </div>
+                )}
                 <h3 style={{ 
-                  fontSize: '1.3rem', 
+                  fontSize: '1.2rem', 
                   marginBottom: '0.5rem', 
                   color: 'var(--text-dark)',
                   fontWeight: '600'
@@ -246,7 +280,7 @@ const Doctors = () => {
                 </h3>
                 <p style={{ 
                   color: 'var(--primary-color)', 
-                  fontSize: '0.95rem', 
+                  fontSize: '0.9rem', 
                   margin: 0,
                   fontWeight: '500'
                 }}>
