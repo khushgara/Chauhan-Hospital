@@ -196,42 +196,62 @@ const Doctors = () => {
             {[
               { name: 'Dr. S. S. Chauhan', qualification: 'I.D.C.M – Critical Care' },
               { name: 'Dr. Naveen', qualification: 'MBBS, MS (Orthopedics, Orthoscopy)' },
-              { 
-                name: 'Dr. Charu Tomar', 
-                qualification: 'M.D (Pediatrics)',
-                details: 'Focus and 2D Echo for children, NICU and critical care of neonates, Allergic and Asthma management, Endocrine disorder in children Management, Malnourishment'
-              },
+              { name: 'Dr. Charu Tomar', qualification: 'M.D (Pediatrics)' },
               { name: 'Dr. Madhu Chauhan', qualification: 'MBBS' }
             ].map((doc, index) => (
               <div key={index} className="medical-team-card" style={{
                 background: 'white',
-                padding: '1.5rem',
-                borderRadius: '8px',
-                boxShadow: 'var(--shadow-md)',
-                transition: 'transform 0.3s ease'
-              }}>
+                padding: '2rem',
+                borderRadius: '12px',
+                border: '1px solid rgba(0,0,0,0.05)',
+                boxShadow: '0 4px 6px rgba(0,0,0,0.05)',
+                transition: 'all 0.3s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                height: '100%'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-5px)';
+                e.currentTarget.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+              }}
+              >
                 <div style={{
-                  width: '60px',
-                  height: '60px',
-                  background: 'var(--primary-color)',
+                  width: '70px',
+                  height: '70px',
+                  background: '#0066cc',
                   color: 'white',
                   borderRadius: '50%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 1rem',
-                  fontSize: '1.5rem',
-                  fontWeight: 'bold'
+                  margin: '0 auto 1.5rem',
+                  fontSize: '1.8rem',
+                  fontWeight: 'bold',
+                  boxShadow: '0 4px 10px rgba(0,102,204,0.2)'
                 }}>
                   {doc.name.split(' ')[1][0]}
                 </div>
-                <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-dark)' }}>{doc.name}</h3>
-                <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', margin: 0 }}>{doc.qualification}</p>
-                {doc.details && (
-                  <p style={{ color: '#555', fontSize: '0.85rem', marginTop: '0.8rem', lineHeight: '1.4' }}>
-                    {doc.details}
-                  </p>
-                )}
+                <h3 style={{ 
+                  fontSize: '1.3rem', 
+                  marginBottom: '0.5rem', 
+                  color: 'var(--text-dark)',
+                  fontWeight: '600'
+                }}>
+                  {doc.name}
+                </h3>
+                <p style={{ 
+                  color: 'var(--primary-color)', 
+                  fontSize: '0.95rem', 
+                  margin: 0,
+                  fontWeight: '500'
+                }}>
+                  {doc.qualification}
+                </p>
               </div>
             ))}
           </div>
