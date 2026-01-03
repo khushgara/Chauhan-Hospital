@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Appointments.css';
+import { doctors } from '../data/doctors';
 
 const Appointments = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +18,16 @@ const Appointments = () => {
     insurance: '',
     insuranceId: '',
   });
+
+  // Get unique specializations from doctors list
+  const specializations = [...new Set(doctors.map(doctor => doctor.specialization))];
+
+  // Filter doctors based on selected department
+  // Filter doctors based on selected department, but show all if no department selected
+  // And if a doctor is selected, keep showing them even if department matches (consistency check handled in change handler)
+  const availableDoctors = formData.department 
+    ? doctors.filter(doctor => doctor.specialization === formData.department)
+    : doctors;
 
   const [status, setStatus] = useState('');
 
@@ -209,24 +220,34 @@ const Appointments = () => {
                     <label htmlFor="department" className="form-label">
                       Department <span className="required">*</span>
                     </label>
+
                     <select
                       id="department"
                       name="department"
                       className="form-select"
                       value={formData.department}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                        const newDepartment = e.target.value;
+                        // If current doctor doesn't belong to new department, clear doctor
+                        const currentDoctor = doctors.find(d => d.name === formData.doctor);
+                        let newDoctor = formData.doctor;
+                        
+                        if (currentDoctor && currentDoctor.specialization !== newDepartment && newDepartment !== '') {
+                          newDoctor = '';
+                        }
+                        
+                        setFormData(prev => ({ 
+                          ...prev, 
+                          department: newDepartment, 
+                          doctor: newDoctor 
+                        }));
+                      }}
                       required
                     >
                       <option value="">Select Department</option>
-                      <option value="cardiology">Cardiology</option>
-                      <option value="neurology">Neurology</option>
-                      <option value="orthopedics">Orthopedics</option>
-                      <option value="pediatrics">Pediatrics</option>
-                      <option value="emergency">Emergency Care</option>
-                      <option value="radiology">Radiology</option>
-                      <option value="surgery">General Surgery</option>
-                      <option value="maternity">Maternity & Obstetrics</option>
-                      <option value="oncology">Oncology</option>
+                      {specializations.map((spec, index) => (
+                        <option key={index} value={spec}>{spec}</option>
+                      ))}
                     </select>
                   </div>
                   <div className="form-group">
@@ -238,13 +259,28 @@ const Appointments = () => {
                       name="doctor"
                       className="form-select"
                       value={formData.doctor}
-                      onChange={handleChange}
+                      onChange={(e) => {
+                         const selectedDoctorName = e.target.value;
+                         const selectedDoctor = doctors.find(d => d.name === selectedDoctorName);
+                         
+                         if (selectedDoctor) {
+                           // Auto-select department if doctor is selected
+                           setFormData(prev => ({
+                             ...prev,
+                             doctor: selectedDoctorName,
+                             department: selectedDoctor.specialization
+                           }));
+                         } else {
+                           // Just update doctor (empty case)
+                           handleChange(e);
+                         }
+                      }}
+                      // Removed disabled={!formData.department} to allow direct doctor selection
                     >
-                      <option value="">Any Available Doctor</option>
-                      <option value="dr-johnson">Dr. Sarah Johnson</option>
-                      <option value="dr-chen">Dr. Michael Chen</option>
-                      <option value="dr-williams">Dr. Emily Williams</option>
-                      <option value="dr-anderson">Dr. James Anderson</option>
+                      <option value="">{formData.department ? 'Select Doctor' : 'Select Doctor (Optional)'}</option>
+                      {availableDoctors.map((doctor, index) => (
+                        <option key={index} value={doctor.name}>{doctor.name}</option>
+                      ))}
                     </select>
                   </div>
                 </div>

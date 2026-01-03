@@ -9,7 +9,7 @@ const SocialFloatingActions = () => {
   
   // Social links
   const instagramUrl = 'https://www.instagram.com/chrc_jaipur/';
-  const facebookUrl = 'https://facebook.com';
+  const facebookUrl = 'https://www.facebook.com/people/CHRC-Jaipur/61582571035251/';
 
   return (
     <div className="social-floating-actions">
