@@ -1,9 +1,10 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './DoctorCard.css';
 
-const DoctorCard = ({ name, specialization, qualification, experience, image, description, expertise }) => {
+const DoctorCard = ({ id, name, specialization, qualification, experience, image, description, expertise }) => {
   return (
     <div className="doctor-card">
       <div className="doctor-image">
@@ -54,19 +55,25 @@ const DoctorCard = ({ name, specialization, qualification, experience, image, de
           </div>
         )}
 
-        <Link to="/appointments" className="btn btn-primary btn-small doctor-btn">
-          Book Appointment
-        </Link>
+        <div className="card-actions" style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
+          <Link to={`/doctor/${id}`} className="btn btn-outline btn-small" style={{flex: 1, textAlign: 'center'}}>
+            View Profile
+          </Link>
+          <Link to="/appointments" className="btn btn-primary btn-small doctor-btn" style={{flex: 1, textAlign: 'center'}}>
+            Book Appointment
+          </Link>
+        </div>
       </div>
     </div>
   );
 };
 
 DoctorCard.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   specialization: PropTypes.string.isRequired,
   qualification: PropTypes.string.isRequired,
-  experience: PropTypes.number.isRequired,
+  experience: PropTypes.string.isRequired,
   image: PropTypes.string,
 };
 

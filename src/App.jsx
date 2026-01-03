@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Doctors from './pages/Doctors';
+import DoctorDetails from './pages/DoctorDetails';
+import DoctorReview from './pages/DoctorReview';
 import Contact from './pages/Contact';
 import Appointments from './pages/Appointments';
 import Blog from './pages/Blog';
@@ -41,10 +43,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/doctors" element={<Doctors />} />
+            <Route path="/doctor/:id" element={<DoctorDetails />} />
+            <Route path="/doctor-review" element={<DoctorReview />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/appointments" element={<Appointments />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

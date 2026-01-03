@@ -8,6 +8,7 @@ import drShailendra from '../assets/dr-shailendra.jpg';
 
 export const doctors = [
   {
+    id: 'dr-veer-singh-chauhan',
     name: 'Dr. Veer Singh Chauhan',
     specialization: 'Internal Medicine',
     qualification: 'Senior Physician',
@@ -23,6 +24,7 @@ export const doctors = [
     ]
   },
   {
+    id: 'dr-surekha-tanwar',
     name: 'Dr. Surekha Tanwar',
     specialization: 'Oral & Cosmetic Surgeon',
     qualification: 'BDS, MDS (Ex SMS & Army Hospital)',
@@ -38,6 +40,7 @@ export const doctors = [
     ]
   },
   {
+    id: 'dr-madhu-chauhan',
     name: 'Dr. Madhu Chauhan',
     specialization: 'Critical Care & Emergency',
     qualification: 'MBBS, Critical Care',
@@ -52,6 +55,7 @@ export const doctors = [
     ]
   },
   {
+    id: 'dr-mahendra-kumar-sharma',
     name: 'Dr. Mahendra Kumar Sharma',
     specialization: 'General Surgery',
     qualification: 'Senior Consultant Surgeon, Alumnus SMS Medical College',
@@ -69,6 +73,7 @@ export const doctors = [
     ]
   },
   {
+    id: 'dr-pushpendra-singh-chauhan',
     name: 'Dr. Pushpendra Singh Chauhan',
     specialization: 'Internal Medicine',
     qualification: 'MBBS, M.D (Medicine)',
@@ -85,6 +90,7 @@ export const doctors = [
     ]
   },
   {
+    id: 'dr-charu-singh',
     name: 'Dr. Charu Singh',
     specialization: 'Pediatrics / Child Specialist',
     qualification: 'MBBS, MD (Pediatrics)',
@@ -100,6 +106,7 @@ export const doctors = [
     ]
   },
   {
+    id: 'dr-shailendra-singh-chauhan',
     name: 'Dr. Shailendra Singh Chauhan',
     specialization: 'Critical Care & Emergency',
     qualification: 'IDDCM (Critical Care & Trauma)',

@@ -1,0 +1,156 @@
+.doctor-review-page {
+    background: #f5f5f5;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.review-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.review-controls h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.review-content-wrapper {
+    background: white;
+    padding: 40px; /* Padding for the PDF visual container */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 210mm; /* Approximate A4 width for preview realism */
+    margin: 0 auto;
+}
+
+.pdf-header h1 {
+    font-size: 24pt;
+    margin-bottom: 5pt;
+}
+
+.review-doctor-card {
+    padding: 20pt 0;
+    page-break-inside: avoid; /* Use standard CSS for break avoidance where supported */
+}
+
+/* Specific class used by html2pdf to force page breaks if needed, 
+   though 'avoid' inside is usually better for cards. 
+   Here we might not want a force break on *every* card if they fit, 
+   but for safety in this specific "one per page" style request? 
+   Let's keep it flexible. Actually, user asked for PDP where save all info, 
+   so maybe multiple per page is okay. 
+   Let's use a class that ensures clean cuts. */
+
+.review-header {
+    display: flex;
+    gap: 20pt;
+    margin-bottom: 15pt;
+    align-items: flex-start;
+}
+
+.review-image img {
+    width: 100pt;
+    height: 100pt;
+    border-radius: 8pt;
+    object-fit: cover;
+    border: 1pt solid #ddd;
+}
+
+.review-placeholder {
+    width: 100pt;
+    height: 100pt;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30pt;
+    color: #999;
+    border-radius: 8pt;
+}
+
+.review-info h2 {
+    color: #333;
+    margin: 0 0 5pt 0;
+    font-size: 18pt;
+}
+
+.review-info h4 {
+    color: #0066cc; /* Brand color */
+    margin: 0 0 5pt 0;
+    font-size: 14pt;
+    font-weight: 500;
+}
+
+.qualification-text {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 8pt;
+}
+
+.exp-badge {
+    background: #eef;
+    color: #0066cc;
+    padding: 4pt 10pt;
+    border-radius: 4pt;
+    font-size: 10pt;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.review-body h5 {
+    font-size: 12pt;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5pt;
+    border-bottom: 1pt solid #eee;
+    padding-bottom: 2pt;
+}
+
+.review-section {
+    margin-bottom: 15pt;
+}
+
+.review-skills {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5pt;
+}
+
+.review-skills li {
+    background: #f0f8ff;
+    border: 1px solid #cceeff;
+    padding: 2pt 8pt;
+    border-radius: 4pt;
+    font-size: 10pt;
+    color: #005580;
+}
+
+.doctor-divider {
+    border: 0;
+    border-top: 1px dashed #ccc;
+    margin: 20pt 0;
+}
+
+/* Print specific adjustments if they print directly instead of download */
+@media print {
+    .review-controls {
+        display: none;
+    }
+    .doctor-review-page {
+        background: white;
+        padding: 0;
+    }
+    .review-content-wrapper {
+        box-shadow: none;
+        max-width: none;
+        padding: 0;
+    }
+}
