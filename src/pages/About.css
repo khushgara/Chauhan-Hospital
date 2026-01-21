@@ -139,6 +139,7 @@
 
 .sub-images .about-img {
   height: 100px;
+  cursor: pointer;
 }
 
 @media (max-width: 968px) {

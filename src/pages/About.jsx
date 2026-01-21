@@ -10,6 +10,7 @@ import about4 from '../assets/about-4.jpg';
 const About = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [activeHistoryImage, setActiveHistoryImage] = useState(0);
 
   const galleryImages = [
     { src: about1, alt: "Hospital Building" },
@@ -193,11 +194,24 @@ const About = () => {
               </p>
             </div>
             <div className="history-images-grid">
-              <img src={about1} alt="Hospital Building" className="about-img main-img" />
+              <img 
+                src={galleryImages[activeHistoryImage].src} 
+                alt={galleryImages[activeHistoryImage].alt} 
+                className="about-img main-img" 
+              />
               <div className="sub-images">
-                <img src={about2} alt="Medical Facility" className="about-img" />
-                <img src={about3} alt="Hospital Services" className="about-img" />
-                <img src={about4} alt="Medical Team" className="about-img" />
+                {galleryImages
+                  .map((img, index) => ({ ...img, originalIndex: index }))
+                  .filter((_, index) => index !== activeHistoryImage)
+                  .map((img, index) => (
+                    <img 
+                      key={index} 
+                      src={img.src} 
+                      alt={img.alt} 
+                      className="about-img" 
+                      onClick={() => setActiveHistoryImage(img.originalIndex)}
+                    />
+                  ))}
               </div>
             </div>
           </div>
