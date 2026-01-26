@@ -18,6 +18,7 @@ import TermsOfService from './pages/TermsOfService';
 import './index.css';
 
 import SocialFloatingActions from './components/SocialFloatingActions';
+import PromoPopup from './components/PromoPopup';
 
 
 // Scroll to top component
@@ -56,7 +57,7 @@ function App() {
         </main>
         <Footer />
         <SocialFloatingActions />
-
+        <PromoPopup />
       </div>
     </Router>
   );
