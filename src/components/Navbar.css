@@ -58,7 +58,9 @@
   margin: 0;
 }
 .navbar-menu li {
-  display: flex;
+    display: flex;
+    align-items: center;
+    width: max-content;
 }
 
 .nav-link {
