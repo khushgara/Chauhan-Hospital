@@ -21,7 +21,7 @@
     gap: var(--space-sm);
     text-decoration: none;
     transition: transform var(--transition-base);
-    width: 22%;
+    /* width: 22%; */
 }
 
 .navbar-logo:hover {
@@ -41,7 +41,8 @@
 
 .logo-text {
   font-family: var(--font-heading);
-  font-size: var(--text-xl);
+  /* font-size: var(--text-xl); */
+  font-size: 17px;
   font-weight: 700;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
@@ -55,6 +56,9 @@
   list-style: none;
   gap: var(--space-lg);
   margin: 0;
+}
+.navbar-menu li {
+  display: flex;
 }
 
 .nav-link {
@@ -186,5 +190,13 @@
   .navbar-actions {
     display: flex;
     align-items: center;
+    gap: 15px; /* Replaces margin-right in GoogleTranslate */
+  }
+
+  .navbar-actions .btn-primary {
+    padding: 0.6rem 1.2rem; /* Reduce padding */
+    font-size: 0.95rem; /* Slightly smaller font */
+    box-shadow: var(--shadow-sm); /* Lighter shadow */
+    white-space: nowrap; /* Prevent wrapping */
   }
 }

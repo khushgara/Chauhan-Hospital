@@ -4,16 +4,17 @@
   /* left: 20px; */
   /* z-index: 1000; */
   background-color: white;
-  padding: 8px;
+  padding: 4px 12px;
   border-radius: 50px;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 140px;
+  min-width: auto; /* Let it wrap content */
+  height: 36px; /* Match button height roughly */
   transition: all 0.3s ease;
   border: 1px solid #eee;
-  margin-right: 15px; /* Add spacing between translate and button */
+  /* margin-right: 15px; Removed: spacing handled by gap in Navbar */
 }
 
 .google-translate-container:hover {
@@ -63,9 +64,12 @@ body {
 /* Mobile adjustments */
 @media screen and (max-width: 768px) {
   .google-translate-container {
-    bottom: 20px;
-    left: 20px;
-    padding: 6px;
-    min-width: 120px;
+    bottom: auto;
+    left: auto;
+    padding: 8px 16px;
+    min-width: auto;
+    height: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
   }
 }
