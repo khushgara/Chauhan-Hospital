@@ -3,7 +3,7 @@ import './SocialFloatingActions.css';
 
 const SocialFloatingActions = () => {
   // Contact config
-  const phoneNumber = '9610005141'; 
+  const phoneNumber = '919610005141'; 
   const whatsappMessage = 'Hello! I would like to inquire about hospital services.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   

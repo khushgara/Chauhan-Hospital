@@ -49,7 +49,7 @@ const Contact = () => {
                   </div>
                   <div className="contact-text">
                     <h4>Phone</h4>
-                    <p>Main: <a href="tel:9610005141" style={{color: 'inherit'}}>96100 05141</a><br />Emergency: <a href="tel:9610005141" style={{color: 'inherit'}}>96100 05141</a></p>
+                    <p>Main: <a href="tel:919610005141" style={{color: 'inherit'}}>96100 05141</a><br />Emergency: <a href="tel:919610005141" style={{color: 'inherit'}}>96100 05141</a></p>
                   </div>
                 </div>
 
@@ -124,12 +124,12 @@ const Contact = () => {
             <div className="department-card">
               <h4>Appointments</h4>
               <p>Schedule your visit</p>
-              <a href="tel:+15551234568" className="department-phone">96100 05141</a>
+              <a href="tel:919610005141" className="department-phone">96100 05141</a>
             </div>
             <div className="department-card">
               <h4>Patient Services</h4>
               <p>General inquiries</p>
-              <a href="tel:+15551234567" className="department-phone">96100 05141</a>
+              <a href="tel:919610005141" className="department-phone">96100 05141</a>
             </div>
           </div>
         </div>
