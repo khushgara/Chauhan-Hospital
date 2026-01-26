@@ -77,11 +77,9 @@ const Navbar = () => {
             <li><Link to="/blog" className="mobile-nav-link" onClick={closeMenu}>Blog</Link></li>
             <li><Link to="/contact" className="mobile-nav-link" onClick={closeMenu}>Contact</Link></li>
             <li>
-            <li>
               <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                {isMenuOpen && <GoogleTranslate id="google_translate_element_mobile" />}
+                <GoogleTranslate id="google_translate_element_mobile" />
               </div>
-            </li>
             </li>
             <li>
               <Link to="/appointments" className="btn btn-primary" onClick={closeMenu}>
