@@ -8,7 +8,7 @@ const GoogleTranslate = ({ id = "google_translate_element" }) => {
     const checkAndInit = () => {
       // Check if library is loaded
       if (window.google && window.google.translate && window.google.translate.TranslateElement) {
-        // Check if element exists and is empty
+        // Check if element exists and is empty (to prevent double init)
         const element = document.getElementById(id);
         if (element && !element.innerHTML) {
           try {
@@ -17,7 +17,6 @@ const GoogleTranslate = ({ id = "google_translate_element" }) => {
                 pageLanguage: 'en',
                 layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
                 includedLanguages: 'en,hi',
-                autoDisplay: false,
               },
               id
             );

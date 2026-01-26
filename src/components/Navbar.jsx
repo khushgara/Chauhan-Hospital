@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/LOGO.png';
-import GoogleTranslate from './GoogleTranslate';
+
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="navbar-actions desktop-actions">
-            <GoogleTranslate id="google_translate_element_desktop" />
+            <LanguageSelector />
             <Link to="/appointments" className="btn btn-primary">
               Book Appointment
             </Link>
@@ -76,11 +77,13 @@ const Navbar = () => {
             <li><Link to="/doctors" className="mobile-nav-link" onClick={closeMenu}>Doctors</Link></li>
             <li><Link to="/blog" className="mobile-nav-link" onClick={closeMenu}>Blog</Link></li>
             <li><Link to="/contact" className="mobile-nav-link" onClick={closeMenu}>Contact</Link></li>
+
             <li>
               <div style={{display: 'flex', justifyContent: 'center', marginBottom: '1rem'}}>
-                <GoogleTranslate id="google_translate_element_mobile" />
+                <LanguageSelector />
               </div>
             </li>
+            
             <li>
               <Link to="/appointments" className="btn btn-primary" onClick={closeMenu}>
                 Book Appointment

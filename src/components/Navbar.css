@@ -57,11 +57,8 @@
   gap: var(--space-lg);
   margin: 0;
 }
-.navbar-menu li {
-    display: flex;
-    align-items: center;
-    width: max-content;
-}
+
+
 
 .nav-link {
   color: var(--dark-gray);
@@ -71,6 +68,7 @@
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
   position: relative;
+  white-space: nowrap;
 }
 
 .nav-link::after {
@@ -129,11 +127,11 @@
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 70px;
+  top: 115px;
   left: 0;
   right: 0;
   background: var(--white);
-  box-shadow: var(--shadow-lg);
+  /* box-shadow: var(--shadow-lg); */
   max-height: 0;
   overflow: hidden;
   transition: max-height var(--transition-base);
@@ -192,7 +190,7 @@
   .navbar-actions {
     display: flex;
     align-items: center;
-    gap: 15px; /* Replaces margin-right in GoogleTranslate */
+    gap: 15px;
   }
 
   .navbar-actions .btn-primary {

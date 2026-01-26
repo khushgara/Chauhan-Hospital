@@ -1,20 +1,14 @@
 .google-translate-container {
-  /* position: fixed; */
-  /* bottom: 20px; */
-  /* left: 20px; */
-  /* z-index: 1000; */
   background-color: white;
   padding: 4px 12px;
   border-radius: 50px;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: auto; /* Let it wrap content */
-  height: 36px; /* Match button height roughly */
+  min-width: auto;
+  height: 36px;
   transition: all 0.3s ease;
   border: 1px solid #eee;
-  /* margin-right: 15px; Removed: spacing handled by gap in Navbar */
 }
 
 .google-translate-container:hover {
