@@ -263,7 +263,7 @@ const About = () => {
               We accept various government schemes to make healthcare accessible
             </p>
           </div>
-          <div className="grid grid-3 text-center">
+          <div className="grid grid-4 text-center">
             <div className="card">
               <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Ayushman Bharat</h3>
               <p>Health Scheme Accepted</p>
@@ -271,6 +271,10 @@ const About = () => {
             <div className="card">
               <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>RGHS</h3>
               <p>Rajasthan Government Health Scheme</p>
+            </div>
+            <div className="card">
+              <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>Jan-aadhar</h3>
+              <p>Rajasthan Government Scheme</p>
             </div>
             <div className="card">
               <h3 style={{ color: 'var(--primary-blue)', marginBottom: '1rem' }}>TPA Approved</h3>

@@ -1,19 +1,25 @@
 import React, { useEffect } from 'react';
 import './GoogleTranslate.css';
 
-const GoogleTranslate = () => {
+const GoogleTranslate = ({ id = "google_translate_element" }) => {
   useEffect(() => {
-    // Ensuring the Google Translate script re-initializes if needed
-    // This is sometimes needed in SPA transitions, though globally loaded script usually handles it.
-    // We check if the element exists and if the google object is available.
+    // Check if the Google Translate script is already loaded and the element exists
     if (window.google && window.google.translate && window.google.translate.TranslateElement) {
-        // Sometimes reloading the element is tricky with the global script
-        // We rely on the global init for the first load.
+      if (!document.getElementById(id).innerHTML) { // Only init if empty to avoid duplicates
+        new window.google.translate.TranslateElement(
+          {
+            pageLanguage: 'en',
+            layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+            includedLanguages: 'en,hi',
+          },
+          id
+        );
+      }
     }
-  }, []);
+  }, [id]);
 
   return (
-    <div id="google_translate_element"></div>
+    <div id={id} className="google-translate-container"></div>
   );
 };
 

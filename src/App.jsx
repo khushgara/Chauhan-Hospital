@@ -18,7 +18,7 @@ import TermsOfService from './pages/TermsOfService';
 import './index.css';
 
 import SocialFloatingActions from './components/SocialFloatingActions';
-import GoogleTranslate from './components/GoogleTranslate';
+
 
 // Scroll to top component
 function ScrollToTop() {
@@ -56,7 +56,7 @@ function App() {
         </main>
         <Footer />
         <SocialFloatingActions />
-        <GoogleTranslate />
+
       </div>
     </Router>
   );
