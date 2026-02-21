@@ -18,6 +18,7 @@ import TermsOfService from './pages/TermsOfService';
 import './index.css';
 
 import SocialFloatingActions from './components/SocialFloatingActions';
+import Chatbot from './components/Chatbot';
 
 
 
@@ -57,6 +58,7 @@ function App() {
         </main>
         <Footer />
         <SocialFloatingActions />
+        <Chatbot />
 
       </div>
     </Router>
